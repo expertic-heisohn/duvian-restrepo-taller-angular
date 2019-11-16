@@ -28,6 +28,24 @@ export class AppComponent {
     this.events.splice(itemIndex, 1);
   }
 
+  addNewEvent() {
+    const newEvent: any = {
+      time: this.timeInput.value,
+      subject: this.subjectInput.value,
+      location: this.locationInput.value,
+      description: this.descriptionInput.value
+    };
+
+    this.events.push(newEvent);
+
+    this.timeInput.setValue('');
+    this.subjectInput.setValue('');
+    this.locationInput.setValue('');
+    this.descriptionInput.setValue('');
+
+    this.modal.hide();
+  }
+
 }
 
 
